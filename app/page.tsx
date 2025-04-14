@@ -2,7 +2,7 @@ import ProductDisplay from "@/components/product-display"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "monmarthe",
+  title: "Monmarthe",
   description: "Applications de productivité",
 }
 
