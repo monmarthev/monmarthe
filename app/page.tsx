@@ -2,7 +2,7 @@ import ProductDisplay from "@/components/product-display"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "|MONMARTHE|",
+  title: "monmarthe",
   description: "Découvrez et achetez mon produit incroyable",
 }
 
