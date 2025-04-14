@@ -3,19 +3,19 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "monmarthe",
-  description: "Découvrez et achetez mon produit incroyable",
+  description: "Applications de productivité",
 }
 
 export default function Home() {
   return (
     <main className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-12">Ma Boutique en Ligne</h1>
+      <h1 className="text-4xl font-bold text-center mb-12">Applications</h1>
       <ProductDisplay
         product={{
-          id: "prod_123",
-          name: "Mon Produit Incroyable",
-          description: "Une description détaillée de mon produit et de ses caractéristiques exceptionnelles.",
-          price: 49.99,
+          id: "1",
+          name: "Horae",
+          description: "Application de gestion de temps et de tâches", 
+          price: 10,
           currency: "EUR",
           image: "/placeholder.svg?height=400&width=600",
         }}
