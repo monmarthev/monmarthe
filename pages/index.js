@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import "../styles/memphis.css";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
