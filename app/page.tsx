@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import ProductDisplay from "@/components/product-display";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
