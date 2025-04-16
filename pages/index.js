@@ -5,8 +5,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   // Ces valeurs devront être remplacées par vos clés réelles
-  const stripePublicKey = "votre_clé_publique_stripe";
-  const priceId = "votre_price_id";
+  const stripePublicKey = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY;
+  const priceId = process.env.NEXT_PUBLIC_STRIPE_PRICE_ID;
 
   const handlePurchase = async () => {
     setLoading(true);
