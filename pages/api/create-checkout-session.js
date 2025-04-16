@@ -1,6 +1,5 @@
 // pages/api/create-checkout-session.js
 import Stripe from "stripe";
-import "../../styles/memphis.css";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
