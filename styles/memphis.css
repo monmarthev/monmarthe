@@ -1,525 +1,158 @@
 /* styles/memphis.css */
 
-/* Import des polices */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-
-/* Variables globales */
-:root {
-    --primary: #6d28d9; /* Purple-700 */
-    --primary-light: #8b5cf6; /* Purple-500 */
-    --primary-dark: #5b21b6; /* Purple-800 */
-    --primary-bg: #f5f3ff; /* Purple-50 */
-    --accent: #f59e0b; /* Amber-500 */
-    --text-dark: #111827; /* Gray-900 */
-    --text-medium: #4b5563; /* Gray-600 */
-    --text-light: #9ca3af; /* Gray-400 */
-    --bg-light: #f9fafb; /* Gray-50 */
-    --border-light: #e5e7eb; /* Gray-200 */
-    --success: #10b981; /* Emerald-500 */
-    --error: #ef4444; /* Red-500 */
-}
-
-/* Réinitialisation et styles de base */
-html,
+/* Styles globaux */
 body {
-    font-family:
-        "Inter",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
-    color: var(--text-dark);
-    line-height: 1.5;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* En-tête avec effet glassmorphism */
-header {
-    background: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    transition: all 0.3s ease;
-}
-
-header.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* Logo */
-.logo {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-light) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-}
-
-/* Navigation */
-nav a {
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* Hero section avec effet de fond */
-.hero-section {
-    background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.15) 0%,
-        rgba(139, 92, 246, 0) 70%
-    );
-    z-index: 0;
-}
-
-.hero-section::after {
-    content: "";
-    position: absolute;
-    bottom: -50%;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        circle,
-        rgba(139, 92, 246, 0.1) 0%,
-        rgba(139, 92, 246, 0) 70%
-    );
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-title {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -1px;
-    background: linear-gradient(to right, var(--text-dark), var(--primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Boutons stylisés */
-.btn-primary {
-    background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-light) 100%
-    );
-    color: white;
-    font-weight: 500;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.25);
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
+/* Styles pour les boutons */
+button {
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Styles pour les sections */
+section {
+    padding: 4rem 0;
+}
+
+section.bg-white {
+    background-color: #ffffff;
+}
+
+section.bg-gray-50 {
+    background-color: #f9fafb;
+}
+
+section.bg-purple-600 {
+    background-color: #7c3aed;
+}
+
+/* Styles pour les titres */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Styles pour les paragraphes */
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Styles pour les liens */
+a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les icônes */
+svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+svg:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour les cartes */
+.card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styles pour les boutons */
+.btn-primary {
+    background-color: #7c3aed;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(109, 40, 217, 0.3);
+    background-color: #6d28d9;
 }
 
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-.btn-primary::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0)
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.btn-primary:hover::after {
-    opacity: 1;
-}
-
+/* Styles pour les boutons secondaires */
 .btn-secondary {
-    background: white;
-    color: var(--primary);
-    font-weight: 500;
-    border-radius: 8px;
+    background-color: #f3f4f6;
+    color: #4b5563;
     padding: 0.75rem 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .btn-secondary:hover {
-    background: var(--primary-bg);
-    border-color: var(--primary-light);
+    background-color: #e5e7eb;
 }
 
-/* Cartes de fonctionnalités */
-.feature-card {
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-light);
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.2) 0%,
-        rgba(109, 40, 217, 0.2) 100%
-    );
-    border-radius: 12px;
+/* Styles pour les formulaires */
+form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.feature-icon svg {
-    width: 24px;
-    height: 24px;
-    color: var(--primary);
+input,
+textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
 }
 
-/* Section tarification */
-.pricing-card {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+input:focus,
+textarea:focus {
+    border-color: #7c3aed;
+    outline: none;
 }
 
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+/* Styles pour les messages de succès/erreur */
+.message-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
-.pricing-header {
-    background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-dark) 100%
-    );
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.pricing-header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0) 70%
-    );
-    border-radius: 50%;
-    transform: translate(50%, -50%);
-}
-
-.price {
-    font-family: "Poppins", sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    position: relative;
-    z-index: 1;
-}
-
-.pricing-features {
-    padding: 2rem;
-    background: white;
-}
-
-.feature-check {
-    color: var(--success);
-    margin-right: 0.75rem;
-}
-
-/* Section FAQ */
-.faq-card {
-    border-radius: 12px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
-}
-
-.faq-card:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* Section CTA */
-.cta-section {
-    background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-dark) 100%
-    );
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
-/* Footer */
-.footer {
-    background: #1f2937;
-    color: white;
-}
-
-.footer-title {
-    font-family: "Poppins", sans-serif;
-    color: white;
-    font-weight: 600;
-}
-
-.footer-link {
-    color: #d1d5db;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: white;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.8s ease forwards;
-}
-
-.delay-100 {
-    animation-delay: 0.1s;
-}
-.delay-200 {
-    animation-delay: 0.2s;
-}
-.delay-300 {
-    animation-delay: 0.3s;
-}
-.delay-400 {
-    animation-delay: 0.4s;
-}
-.delay-500 {
-    animation-delay: 0.5s;
-}
-
-/* Styles pour la page de succès */
-.success-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--success);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2rem;
-}
-
-.success-icon svg {
-    width: 40px;
-    height: 40px;
-    color: white;
-}
-
-.step-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--primary-bg);
-    color: var(--primary);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
-/* Media queries pour la responsivité */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.25rem;
-    }
-
-    .price {
-        font-size: 2.5rem;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .desktop-menu {
-        display: none;
-    }
-}
-
-/* Pour les animations au défilement */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Styles supplémentaires pour les boutons d'action */
-.btn-with-icon {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-with-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* Styles pour les témoignages (si vous décidez d'en ajouter) */
-.testimonial-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    position: relative;
-}
-
-.testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: 0;
-    left: 20px;
-    font-size: 5rem;
-    font-family: "Georgia", serif;
-    color: var(--primary-bg);
-    line-height: 1;
-    opacity: 0.5;
-}
-
-/* Effets de survol pour les images ou illustrations (si vous en ajoutez) */
-.hover-scale {
-    transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-    transform: scale(1.05);
-}
-
-/* Styles pour les indicateurs de chargement */
-.loading-spinner {
-    width: 24px;
-    height: 24px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
-    margin-right: 0.5rem;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Style pour le scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--text-light);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--text-medium);
+.message-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
